@@ -13,10 +13,10 @@
   <form #fc="ngForm" (ngSubmit)="onsubmit(fc)">
     
     <ion-item>
-      <ion-label position="floating">Nome</ion-label>
+      <ion-label position="floating">Nome Completo</ion-label>
       <ion-input type="text" [(ngModel)]="usuario.nome" name="nome" required> </ion-input>
     </ion-item>
-  
+
     <ion-item>
       <ion-label position="floating">E-mail</ion-label>
       <ion-input type="email" [(ngModel)]="usuario.email" name="email" required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #e="ngModel" >
@@ -24,12 +24,26 @@
   
       <ion-text color="danger" *ngIf="(e.invalid && e.dirty)">E-mail invalido!</ion-text>
   </ion-item>
-  
+
+  <ion-item>
+    <ion-label position="floating">Telefone</ion-label>
+    <ion-input type="text" [(ngModel)]="usuario.tel" name="tel" required> </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Horário</ion-label>
+
+    <ion-datetime displayFormat="HH:mm"></ion-datetime>
+    <ion-input type="datetime" [(ngModel)]="usuario.hour" name="datetime" required> </ion-input>
+  </ion-item>
+
     <ion-item>
-      <ion-label position="floating">Tel.</ion-label>
-      <ion-input type="text" [(ngModel)]="usuario.tel" name="tel" required> </ion-input>
+      <ion-label></ion-label>
+      <ion-input type="date" [(ngModel)]="usuario.datetime" name="datetime" required> </ion-input>
+      <ion-datetime displayFormat="DDDD MMM D, YYYY" min="2005" max="2020" value="2008-09-02"></ion-datetime>
     </ion-item>
-   
+
+  
     <ion-item>
       <ion-label position="floating">Senha</ion-label>
       <ion-input type="password" [(ngModel)]="usuario.pws" name="pws" required minlength="7" #p="ngModel"></ion-input>
