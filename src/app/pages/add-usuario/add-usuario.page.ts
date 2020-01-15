@@ -43,14 +43,14 @@ export class AddUsuarioPage implements OnInit {
     } else {
       this.usuarioService.save(this.usuario).then(
         res => {
-          this.presentAlert("Aviso", "Cadastrado!");
+          this.presentAlert("Aviso", "Agendado Com Sucesso!!.");
           form.reset();
           this.usuario = new Usuario;
           this.router.navigate(['/tabs/list-usuario']);
         },
         erro => {
           console.log("Erro: " + erro);
-          this.presentAlert("Erro", "Erro ao cadastrar!");
+          this.presentAlert("Erro", "Erro ao Agendar!");
         }
       )
     }
