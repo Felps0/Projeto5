@@ -29,7 +29,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy,},
-    GooglePlus
+    GooglePlus,
   ],
   bootstrap: [AppComponent]
 })
