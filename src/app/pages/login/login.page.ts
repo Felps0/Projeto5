@@ -17,6 +17,7 @@ export class LoginPage implements OnInit {
   protected senha: string;
 
   constructor(
+   
     public afAuth: AngularFireAuth,
     protected router: Router,
     protected msg: MensagemService,
@@ -31,19 +32,12 @@ export class LoginPage implements OnInit {
     this.login()
   }
 
-  loginWEB() {
-    if (this.platform.is("cordova")) {
-      this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-    } else {
-      this.loginGooglePlus()
-    }
-  }
-
   login() {
     this.afAuth.auth.signInWithEmailAndPassword(this.email, this.senha).then(
       res => {
         console.log(res);
-        this.router.navigate(["/"])
+
+        this.router.navigate([""])
       },
       erro => {
         console.log(erro);
@@ -67,3 +61,5 @@ export class LoginPage implements OnInit {
   }
 
 }
+
+
