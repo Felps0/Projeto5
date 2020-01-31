@@ -46,12 +46,6 @@ export class LoginPage implements OnInit {
     )
   }
 
-  loginGooglePlus() {
-    this.googlePlus.login({})
-      .then(res => console.log(res))
-      .catch(err => console.error(err));
-  }
-
   logout() {
     this.afAuth.auth.signOut();
     if (!this.platform.is("cordova")){

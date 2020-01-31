@@ -15,21 +15,22 @@ export class UsuarioService {
   ) { }
 
   save(usuario) {
-    return this.afAuth.auth.createUserWithEmailAndPassword(usuario.email,usuario.pws).then(
-      res=> {
-        usuario.email = null;
-        usuario.pws = null;
-        return this.fire.object("usuarios/" + res.user.uid).set(usuario); 
-      },
-      erro => {
-      console.log(erro);
-      this.afAuth.auth.currentUser.delete();
-      } 
-    )
+    return this.afAuth.auth.createUserWithEmailAndPassword(usuario.email, usuario.pws)
+      .then(
+        res => {
+          usuario.email = null;
+          usuario.pws = null;
+          return this.fire.object("usuarios/" + res.user.uid).set(usuario);
+        },
+        erro =>{
+          console.log(erro);
+          this.afAuth.auth.currentUser.delete();
+        } 
+      )
   }
 
   getAll() {
-    return this.fire.list("usuarios").snapshotChanges()
+    return this.fire.list<Usuario>("usuarios").snapshotChanges()
       .pipe(
         map(
           dados =>
@@ -39,7 +40,7 @@ export class UsuarioService {
   }
 
   get(id) {
-    return this.fire.object<Usuario>("usuarios/" + id).valueChanges();  
+    return this.fire.object<Usuario>("usuarios/" + id).valueChanges();
   }
 
   remover(id) {
