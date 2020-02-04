@@ -9,12 +9,14 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
+
  
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 
 @NgModule({
@@ -22,14 +24,21 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule,
+    
     AngularFireAuthModule,
+
+    AngularFireDatabaseModule,
+    
+    AngularFirestoreModule,
+
+    AngularFireStorageModule
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy,},
-    GooglePlus
+    GooglePlus,
   ],
   bootstrap: [AppComponent]
 })
