@@ -1,3 +1,4 @@
+import { PerfilUsuarioPage } from './../pages/perfil-usuario/perfil-usuario.page';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
@@ -8,12 +9,22 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'addUsuario',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+              import('../pages/add-usuario/add-usuario.module').then(m => m.AddUsuarioPageModule)
+          }
+        ]
+      },
+      {
+        path: 'addUsuario/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/add-usuario/add-usuario.module').then(m => m.AddUsuarioPageModule)
           }
         ]
       },
@@ -28,17 +39,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'profile',
-        children: [
-          {
-            path: '',
-            loadChildren: () =>
-              import('../pages/profile/profile.module').then(m => m.ProfilePageModule)
-          }
-        ]
-      },
-      {
-        path: 'list-usuario',
+        path: 'listUsuario',
         children: [
           {
             path: '',
@@ -47,23 +48,24 @@ const routes: Routes = [
           }
         ]
       },
+
       {
-        path: 'add-usuario',
+        path: 'tab1',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../pages/add-usuario/add-usuario.module').then(m => m.AddUsuarioPageModule)
+              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
           }
         ]
       },
       {
-        path: 'add-usuario/:id',
+        path: 'tab3',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../pages/add-usuario/add-usuario.module').then(m => m.AddUsuarioPageModule)
+              import('../tab3/tab3.module').then(m => m.Tab3PageModule)
           }
         ]
       },
@@ -74,27 +76,6 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../pages/perfil-usuario/perfil-usuario.module').then(m => m.PerfilUsuarioPageModule)
-          }
-        ]
-      },
-      {
-        path: 'login',
-        children: [
-          {
-            path: '',
-            loadChildren: () =>
-              import('../pages/login/login.module').then(m => m.LoginPageModule)
-          }
-        ]
-      },
-      
-      {
-        path: 'tab3',
-        children: [
-          {
-            path: '',
-            loadChildren: () =>
-              import('../tab3/tab3.module').then(m => m.Tab3PageModule)
           }
         ]
       },
@@ -116,4 +97,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }
