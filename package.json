@@ -21,8 +21,11 @@
     "@angular/platform-browser": "~8.1.2",
     "@angular/platform-browser-dynamic": "~8.1.2",
     "@angular/router": "~8.1.2",
+    "@firebase/firestore": "^1.10.0",
+    "@ionic-native/android-permissions": "^5.20.0",
     "@ionic-native/camera": "^5.20.0",
     "@ionic-native/core": "^5.0.0",
+    "@ionic-native/geolocation": "^5.20.0",
     "@ionic-native/google-plus": "^5.19.1",
     "@ionic-native/paypal": "^4.20.0",
     "@ionic-native/splash-screen": "^5.0.0",
@@ -35,9 +38,12 @@
     "@pluritech/auth-service": "^2.1.0",
     "api-auth-service-provider": "^0.8.1",
     "auth-service": "^1.0.0",
+    "br-mask": "0.0.4",
     "card.io.cordova.mobilesdk": "^2.1.0",
     "com.paypal.cordova.mobilesdk": "^3.5.0",
+    "cordova": "^9.0.0",
     "cordova-android": "^8.1.0",
+    "cordova-plugin-android-permissions": "^1.0.2",
     "cordova-plugin-googleplus": "^8.2.1",
     "core-js": "^2.5.4",
     "firebase": "^7.2.3",
@@ -98,7 +104,8 @@
       "com.paypal.cordova.mobilesdk": {},
       "cordova-plugin-googleplus": {
         "PLAY_SERVICES_VERSION": "15.0.1"
-      }
+      },
+      "cordova-plugin-android-permissions": {}
     },
     "platforms": [
       "android"

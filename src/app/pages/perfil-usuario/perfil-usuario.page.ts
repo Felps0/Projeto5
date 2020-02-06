@@ -9,7 +9,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil-usuario.page.scss'],
 })
 export class PerfilUsuarioPage implements OnInit {
-  
   protected usuario: Usuario = new Usuario;
   protected id: string = null;
 

@@ -23,7 +23,7 @@ export class ListUsuarioPage implements OnInit {
   }
 
   editar(key) {
-    this.router.navigate(['/tabs/add-usuario', key]);
+    this.router.navigate(['/tabs/addUsuario', key]);
   }
 
   async doRefresh(event) {
@@ -41,7 +41,7 @@ export class ListUsuarioPage implements OnInit {
   async remover(key) {
     const alert = await this.alertController.create({
       header: 'Apagar!',
-      message: 'Deseja apagar dados definitivamente?',
+      message: 'Deseja apagar pdados definitivamente?',
       buttons: [
         {
           text: 'Não',
