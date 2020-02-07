@@ -80,6 +80,16 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'agendar',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/agendar/agendar.module').then(m => m.AgendarPageModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

@@ -11,6 +11,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
   styleUrls: ['./add-usuario.page.scss'],
 })
 export class AddUsuarioPage implements OnInit {
+  
 
   protected usuario: Usuario = new Usuario;
   protected id: string = null;

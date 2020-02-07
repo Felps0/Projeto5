@@ -8,7 +8,6 @@ import { UsuarioService } from '../services/usuario.service';
 })
 export class TabsPage {
 protected quantUsuario:number = 0;
-protected quantEntrega:number = 0;
 
   constructor(
     protected usuarioService:UsuarioService,

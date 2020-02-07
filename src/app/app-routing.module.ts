@@ -9,6 +9,7 @@ const routes: Routes = [
     canActivate:[LoginGuard] 
   },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
+  { path: 'agendar', loadChildren: './pages/agendar/agendar.module#AgendarPageModule' },
  
 ];
 @NgModule({

@@ -38,20 +38,6 @@
   <ion-input type="text" [(ngModel)]="usuario.tel" name="tel" required> </ion-input>
 </ion-item>
 
-<ion-item>
-  <ion-label>Horário</ion-label>
-
-  <ion-datetime displayFormat="HH:mm"></ion-datetime>
-  <ion-input type="datetime" [(ngModel)]="usuario.hora" name="hora" required> </ion-input>
-</ion-item>
-
-  <ion-item>
-    <ion-label></ion-label>
-    <ion-input type="date" [(ngModel)]="usuario.datetime" name="datetime" required> </ion-input>
-    <ion-datetime displayFormat="DDDD MMM D, YYYY" min="2005" max="2020" value="2008-09-02"></ion-datetime>
-  </ion-item>
-
-
   <ion-item>
     <ion-label position="floating">Senha</ion-label>
     <ion-input type="password" [(ngModel)]="usuario.pws" name="pws" required minlength="7" #p="ngModel"></ion-input>
